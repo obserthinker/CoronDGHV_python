@@ -1,6 +1,6 @@
 ﻿import random
 from parameters import *
-from operations import residue
+from Function.operations import residue
 
 class Public_Key:
     """Generate the public key"""
@@ -28,8 +28,8 @@ class Public_Key:
                 self.seq_r.append(r)
                 self.seq_pk.append(x)
             if residue(max(self.seq_pk), p) % 2 == 0 and max(self.seq_pk) % 2 == 1:
-                print residue(max(pk.seq_pk), sk.sk) % 2
-                print  max(pk.seq_pk) % 2
+                #print residue(max(pk.seq_pk), sk.sk) % 2
+                #print  max(pk.seq_pk) % 2
                 running = False
             else:
                 del self.seq_pk[:]

@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4483e960-57bf-4ae6-a3e5-924e1883a388</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>KeyGen.py</StartupFile>
+    <StartupFile>Main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,25 +22,37 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Enc.py">
+    <Compile Include="Decrypt.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Encrypt.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="everytest.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="KeyGen.py">
+    <Compile Include="Function\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="operations.py">
+    <Compile Include="Main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Function\operations.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="parameters.py" />
     <Compile Include="PublicKey.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="readme">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SecretKey.py">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Function\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
