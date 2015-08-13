@@ -1,7 +1,18 @@
 ﻿# coding = utf-8
 
-def ppt():
-    print u"你在哪里呀"
-    print u"迫不及待地想见到你\n"
 
-    print u"我是不是太心急了？"
+class C:
+    a = 3
+
+def fun(C):
+    b = C.a
+    print b
+
+ss = C()
+fun(ss)
+
+li = []
+li.insert(5,4)
+print li
+li.insert(3,7)
+print li

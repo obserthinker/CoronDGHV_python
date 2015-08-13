@@ -3,6 +3,7 @@ from random import *
 
 class Secret_Key:
     """Generate the secrec key"""
+
     def __init__(self, eta):
         seq = range(2 ** (eta - 1), 2 ** eta)
         # print seq

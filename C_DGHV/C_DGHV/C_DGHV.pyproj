@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4483e960-57bf-4ae6-a3e5-924e1883a388</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>everytest.py</StartupFile>
+    <StartupFile>KeyGen.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,7 +31,13 @@
     <Compile Include="KeyGen.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="operations.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="parameters.py" />
+    <Compile Include="PublicKey.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SecretKey.py">
       <SubType>Code</SubType>
     </Compile>

@@ -14,11 +14,12 @@ class Par:
         self.rho = (int)(lbda)
         self.eta = (int)(lbda**2 * log(lbda, 2))
         self.gamma = int(lbda**5 * log(lbda, 2))
-        self.tau = int(self.gamma + lbda)
+        # self.tau = int(self.gamma + lbda) # theory
+        self.tau = 5
 
         print u"************* 参数生成 **************"
-        print u"安全参数为：", lbda
-        print u"公钥元素个数：", self.tau
-        print u"公钥元素的bit-length：", self.gamma
-        print u"私钥的bit-length：", self.eta
-        print u"噪音的bit-length：", self.rho
+        print u"安全参数为 (lambda)：", lbda
+        print u"公钥元素个数 (tau)：", self.tau
+        print u"公钥元素的bit-length (gamma)：", self.gamma
+        print u"私钥的bit-length (eta)：", self.eta
+        print u"噪音的bit-length (rho)：", self.rho
