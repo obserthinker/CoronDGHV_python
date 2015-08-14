@@ -5,6 +5,9 @@ from Function.operations import residue
 class Public_Key:
     """Generate the public key"""
 
+    max_of_seq_pk = 0
+    q0 = 0
+    r0 = 0
     seq_pk = []
     seq_q = []
     seq_r = []
@@ -27,11 +30,23 @@ class Public_Key:
                 self.seq_q.append(q)
                 self.seq_r.append(r)
                 self.seq_pk.append(x)
-            if residue(max(self.seq_pk), p) % 2 == 0 and max(self.seq_pk) % 2 == 1:
-                #print residue(max(pk.seq_pk), sk.sk) % 2
-                #print  max(pk.seq_pk) % 2
+                self.max_of_seq_pk = max(self.seq_pk)
+            if residue(self.max_of_seq_pk, p) % 2 == 0 and self.max_of_seq_pk % 2 == 1:
+                index = self.seq_pk.index(self.max_of_seq_pk)
+                self.q0 = self.seq_q[index]
+                self.r0 = self.seq_r[index]
+                #print "****** check x0 *******"
+                #print "residul: ", residue(self.max_of_seq_pk, p) % 2
                 running = False
             else:
                 del self.seq_pk[:]
+                del self.seq_q[:]
+                del self.seq_r[:]
            
         print u"公钥：\n", self.seq_pk
+        check = []
+        for i in range(len(self.seq_pk)):
+            check.append(self.seq_q[i] * p+self.seq_r[i])
+        print "q[] = ", self.seq_q
+        print "r[] = ", self.seq_r
+        print "check pk: ", check
