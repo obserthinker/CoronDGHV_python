@@ -44,6 +44,9 @@
     <Compile Include="PublicKey.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PublicKey_14.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="readme">
       <SubType>Code</SubType>
     </Compile>

@@ -37,7 +37,9 @@ class Public_Key:
             self.max_of_seq_pk = max(self.seq_pk) # find the value of max ele
             index = self.seq_pk.index(self.max_of_seq_pk) # get the index of the max ele
             
-            if self.max_of_seq_pk % 2 == 1 and residue(self.max_of_seq_pk, p) % 2 == 0:
+            self.max_of_seq_pk -= self.seq_r[index] # get rid the residue of max ele
+            
+            if self.max_of_seq_pk % 2 == 1:
                 del self.seq_pk[index] # del the max ele in the list it belongs
                 del self.seq_r[index] # del the accord residue ele in the list it belongs
                 del self.seq_q[index]
