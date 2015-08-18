@@ -1,13 +1,13 @@
-# coding = utf-8
+﻿# coding = utf-8
 
-def round_near(x):
-    if (x - int(x)) <= 0.5:
-        x = int(x)
+def quotient(dividend,divisor):
+    if dividend % divisor > divisor/2.0:
+        quotient = (dividend / divisor) + 1
     else:
-        x = int(x) + 1
+        quotient = dividend / divisor
 
-    return x
+    return quotient
 
 def residue(z, p):
-    res = z - round_near(z/p) * p
+    res = z - quotient(z, p) * p
     return res

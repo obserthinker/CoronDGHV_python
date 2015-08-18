@@ -1,9 +1,17 @@
 ﻿# coding = utf-8
 
-class C:
-    def __init__(self):
-        self.a = 3
-        print self.a
+import random
 
-dd = C()
+class A:
+    a = 1
+    b = [2,3,4]
+
+    def __del__(self):
+        del self.a
+        del self.b
+
+D = A()
+print D.a, D.b
+
+
 

@@ -11,6 +11,9 @@ class Secret_Key:
         seq = [i for i in seq if i % 2 == 1]
         #print seq
         self.sk = choice(seq)
-        print u"私钥 p 为：", self.sk
+        #print u"私钥 p 为：", self.sk
+
+    def clean(self):
+        del self.sk
 
 

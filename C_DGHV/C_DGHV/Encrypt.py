@@ -11,6 +11,13 @@ class Cipher:
     sum = 0
     x0 = 0
 
+    def clean(self):
+        del self.noise
+        del self.m
+        del self.c
+        del self.sum
+        del self.x0
+
 
 def encrypt(m, public_key, Par, secret_key):
     # get the m
@@ -31,19 +38,17 @@ def encrypt(m, public_key, Par, secret_key):
     cipher.noise = noise
 
     x0 = public_key.x0
-    r0 = public_key.r0
-    q0 = public_key.q0
     cipher.c = residue(( m + 2 * noise + 2 * sum(Subset) ), x0)
     cipher.x0 = x0
 
-    print "\n******************* Encrypt ********************"
-    print "noise = ", noise, 2*noise
-    print "sum(Subset) = ", sum(Subset), 2*sum(Subset)
-    print "m + 2 * noise = ", m + 2 * noise
-    print "x0 = ", x0
-    check_c = m + 2*noise + residue( 2*( p * sum(public_key.seq_q) + sum(public_key.seq_r) ), x0)
-    print "2*sum(Subset) % x0 = ", residue( 2 * sum(Subset),  x0)
+    #print "\n******************* Encrypt ********************"
+    #print "noise = ", noise, 2*noise
+    #print "sum(Subset) = ", sum(Subset), 2*sum(Subset)
+    #print "m + 2 * noise = ", m + 2 * noise
+    #print "x0 = ", x0
+    #check_c = m + 2*noise + residue( 2*( p * sum(public_key.seq_q) + sum(public_key.seq_r) ), x0)
+    #print "2*sum(Subset) % x0 = ", residue( 2 * sum(Subset),  x0)
     #cipher.sum = residue( 2 * sum(Subset),  x0)
     
-    print u"密文为：", cipher.c
+    #print u"密文为：", cipher.c
     return cipher
